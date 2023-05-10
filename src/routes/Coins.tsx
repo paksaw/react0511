@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
 const Container = styled.div``;
@@ -14,10 +15,17 @@ const CoinsList = styled.ul``;
 
 const Coin = styled.li`
   color: ${(props) => props.theme.textColor};
-  padding: 20px;
   border-radius: 15px;
   margin-bottom: 10px;
   border: 1px solid;
+  a {
+    transition: color 0.2s ease-in;
+    display: block;
+    padding: 20px;
+  }
+  &:hover {
+    color: ${(props) => props.theme.accentColor};
+  }
 `;
 
 const Title = styled.h1`
@@ -63,7 +71,11 @@ function Coins() {
       </Header>
       <CoinsList>
         {coins.map((coin) => {
-          return <Coin key={coin.id}>{coin.name} &rarr;</Coin>;
+          return (
+            <Coin key={coin.id}>
+              <Link to={`/${coin.id}`}>{coin.name} &rarr;</Link>
+            </Coin>
+          );
         })}
       </CoinsList>
     </Container>

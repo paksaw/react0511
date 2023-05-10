@@ -1,5 +1,7 @@
+import React from "react";
 import Router from "./Router";
-import { createGlobalStyle } from "styled-components";
+import { ThemeProvider, createGlobalStyle, styled } from "styled-components";
+import { darkTheme, lightTheme } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -56,12 +58,34 @@ a{
 }
 `;
 
+const ButtonArea = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ModeButton = styled.button`
+  width: 100px;
+  height: 50px;
+  cursor: pointer;
+`;
+
 function App() {
+  const [darkMode, setDarkMode] = React.useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prevMode) => !prevMode);
+  };
   return (
-    <>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyle />
       <Router />
-    </>
+      <ButtonArea>
+        <ModeButton onClick={toggleDarkMode}>
+          {darkMode ? "라이트모드" : "다크모드"}
+        </ModeButton>
+      </ButtonArea>
+    </ThemeProvider>
   );
 }
 

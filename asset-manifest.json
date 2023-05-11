@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "https://paksaw.github.io/react0511/static/js/main.aafb7510.js",
-    "index.html": "https://paksaw.github.io/react0511/index.html",
-    "main.aafb7510.js.map": "https://paksaw.github.io/react0511/static/js/main.aafb7510.js.map"
+    "main.js": "/react0511/static/js/main.76134d8b.js",
+    "index.html": "/react0511/index.html",
+    "main.76134d8b.js.map": "/react0511/static/js/main.76134d8b.js.map"
   },
   "entrypoints": [
-    "static/js/main.aafb7510.js"
+    "static/js/main.76134d8b.js"
   ]
 }

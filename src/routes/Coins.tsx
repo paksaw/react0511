@@ -22,6 +22,13 @@ const Coin = styled.li`
   border-radius: 15px;
   margin-bottom: 10px;
   border: 1px solid;
+  display: flex;
+  align-items: center;
+  img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
   a {
     transition: color 0.2s ease-in;
     display: block;
@@ -100,7 +107,18 @@ function Coins() {
           {coins.map((coin) => {
             return (
               <Coin key={coin.id}>
-                <Link to={`/${coin.id}`}>{coin.name} &rarr;</Link>
+                <img
+                  src={`https://coinicons-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                  alt={`${coin.name}`}
+                />
+                <Link
+                  to={{
+                    pathname: `/${coin.id}`,
+                  }}
+                  state={coin}
+                >
+                  {coin.name} &rarr;
+                </Link>
               </Coin>
             );
           })}

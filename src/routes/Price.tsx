@@ -1,5 +1,5 @@
-function Price() {
-  return <h1>Price</h1>;
-}
+const Price = () => {
+  return <div>44444</div>;
+};
 
 export default Price;

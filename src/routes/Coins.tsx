@@ -103,6 +103,7 @@ function Coins() {
       <Header>
         <Title>Coins</Title>
       </Header>
+
       {isLoading ? (
         "Loading..."
       ) : (
